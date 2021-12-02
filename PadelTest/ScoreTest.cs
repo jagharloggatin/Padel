@@ -8,6 +8,8 @@ namespace PadelTest
 {
     public class ScoreTest
     {
+
+        //score increase
         [Fact]
         public void ScoreIncrease()
         {
@@ -19,6 +21,7 @@ namespace PadelTest
             Assert.Equal(scoreExpectedResult, score._Score);
         }
 
+        //score method increase
         [Fact]
         public void IncreaseScore()
         {

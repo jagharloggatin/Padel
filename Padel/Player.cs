@@ -4,18 +4,8 @@ namespace Padel
 {
     public class Player
     {
-        private string _name;
-        public string Name 
-        {
-            get => Name;
-            set
-            {
-                if (Name == null)
-                    throw new ArgumentException("can't set name to null");
+        public string Name;
 
-                _name = value;
-            }
-        }
         public Score Score { get; set; } = new Score();
 
         public Player()
@@ -28,9 +18,17 @@ namespace Padel
             Name = name;
         }
         
-        public void ScorePoint()
+        public void PlayerPoint()
         {
             Score.Increase();
+        }
+
+        public void SetPlayerName(string name) 
+        {
+            if (name == null)
+                throw new ArgumentException("can't set name to null");
+
+            Name = name;
         }
     }
 }

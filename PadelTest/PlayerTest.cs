@@ -8,7 +8,7 @@ namespace PadelTest
 {
     public class PlayerTest
     {
-
+        //setting playername
         [Fact]
         public void PlayerNameSet()
         {
@@ -18,7 +18,7 @@ namespace PadelTest
 
             Assert.Contains("Player1", player1.Name);
         }
-
+        //setting playername to null
         [Fact]
         public void PlayerNameNull()
         {
@@ -28,7 +28,7 @@ namespace PadelTest
 
             Assert.Null(player1.Name);
         }
-
+        //setting playername
         [Fact]
         public void PlayerNameEmpty()
         {
@@ -39,6 +39,17 @@ namespace PadelTest
             Assert.Empty(player1.Name);
         }
 
+        //Playername can't be set to null
+        [Fact]
+        public void PlayerNameCantBeNull()
+        {
+            var player1 = new Player("Player1");
+
+            Action act = () => player1.SetPlayerName(null);
+
+            Assert.Throws<ArgumentException>(act);
+        }
+        //Checking if playername is not null
         [Fact]
         public void PlayerNameNotNull()
         {

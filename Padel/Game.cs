@@ -15,7 +15,7 @@ namespace Padel
 
         public void GamePoint(Player player)
         {
-            player.ScorePoint();
+            player.PlayerPoint();
         }
 
         public Score GameScore(Player player)
@@ -25,6 +25,7 @@ namespace Padel
 
         public string ScoreString()
         {
+
             if (_player1.Score._Score >= 4 && _player2.Score._Score < (_player1.Score._Score + 2))
                 return "Player 1 wins";
 
